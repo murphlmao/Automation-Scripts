@@ -2,6 +2,7 @@
 
 :: taskkill /F /IM _ /T
 
+:hey
 taskkill /F /IM MSIAfterburner.exe /T
 
 taskkill /F /IM AdobeIPCBroker.exe /T
@@ -36,4 +37,11 @@ taskkill /F /IM gamingservicesnet.exe /T
 
 taskkill /F /IM gamingservices.exe /T
 
+:choice
+set /P c=Redo?[Y/N]?
+if /I "%c%" EQU "Y" goto :hey
+if /I "%c%" EQU "N" goto :exit
+goto :choice
 
+:exit
+exit
