@@ -1,6 +1,7 @@
 @echo off
 
 :: taskkill /F /IM _ /T
+:: Laptop
 :hey
 
 echo --
