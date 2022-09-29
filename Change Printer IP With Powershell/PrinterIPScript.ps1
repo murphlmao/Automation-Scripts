@@ -14,13 +14,13 @@ $oldPrinterName = "Lainer MPC 2003" # This is the name of the printer I want to 
 
 
 # Remove printer stuff before readding it.
-Remove-Printer -name $printerName # must come first, can't remove ports if the printer is still added and utilizing them.
-Remove-PrinterPort $oldPrinterPort -ErrorAction SilentlyContinue # continue if error
+Remove-Printer -name $printerName # Must come first. You can't remove ports if the printer is still utilizing them.
+Remove-PrinterPort $oldPrinterPort -ErrorAction SilentlyContinue # Continue if error
 Remove-PrinterPort $oldPrinterName -ErrorAction SilentlyContinue
 
-# Add new printer.
-Add-PrinterPort -name $portName -PrinterHostAddress $printerIPAddress # set IP address: -PrinterHostAddress
-Add-Printer -Name $printerName -PortName $portName -DriverName $printerDriverName
+# Add new printer port, then printer.
+Add-PrinterPort -name $portName -PrinterHostAddress $printerIPAddress # Set IP address: -PrinterHostAddress
+Add-Printer -Name $printerName -PortName $portName -DriverName $printerDriverName 
 
 Write-Host "Script is done."
 
