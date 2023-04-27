@@ -6,7 +6,7 @@
 
 echo --
 echo Everything.exe
-taskkill /F /IM Everything.exe /T
+taskkill /F /IM Everything.exe /T 
 
 echo --
 echo OfficeClickToRun.exe
