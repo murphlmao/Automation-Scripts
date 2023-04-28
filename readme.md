@@ -1,1 +1,1 @@
-# scripts that i dont have to relearn everytime i script something lol
+scripts n stuff
